@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Portfolio Card Styling */
+  .portfolio-container {
+    @apply flex flex-col items-center justify-center min-h-screen p-4;
+  }
+
+  .portfolio-card {
+    @apply max-w-lg mx-auto bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105;
+  }
+
+  .portfolio-card:hover {
+    @apply shadow-xl;
+  }
+}
+
+/* Additional Custom Styles */
+h1, h2, h3, h4 {
+  @apply text-gray-800;
+}
+
+a {
+  @apply text-indigo-600 hover:text-indigo-800;
+}
+
+a:focus {
+  @apply outline-none ring-2 ring-indigo-500 ring-opacity-50;
+}
